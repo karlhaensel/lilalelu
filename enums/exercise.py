@@ -1,4 +1,4 @@
-"""Enum for exercise range."""
+"""Exercise Enums"""
 
 from enum import IntEnum
 

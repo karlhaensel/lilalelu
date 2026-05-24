@@ -2,7 +2,7 @@
 
 import pytest
 
-from enums.range import ExerciseRange
+from enums.exercise import ExerciseRange
 
 
 @pytest.mark.parametrize("exercise_range", [er for er in ExerciseRange])
