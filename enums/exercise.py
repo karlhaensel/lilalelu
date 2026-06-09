@@ -1,6 +1,6 @@
 """Exercise Enums"""
 
-from enum import IntEnum
+from enum import IntEnum, Enum
 
 
 class ExerciseRange(IntEnum):
@@ -62,3 +62,16 @@ class ExerciseRange(IntEnum):
             ExerciseRange.MAJOR_FOURTEENTH: "M14",
             ExerciseRange.PERFECT_DOUBLE_OCTAVE: "P16",
         }.get(self)
+
+
+class ExerciseDomain(Enum):
+    """Enum for exercise domain."""
+
+    BODY = "body"
+    BREATHING = "breathing"
+    VOICE = "voice"  # TODO: subcategories?
+    LISTENING = "listening"
+    EXPRESSION = "expression"
+    BLENDING = "blending"
+    IMPROVISATION = "improvisation"
+    INTONATION = "intonation"
