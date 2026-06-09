@@ -2,7 +2,23 @@
 
 import pytest
 
-from enums.choir import ChoirVoicingCategory
+from enums.choir import ChoirVoicingCategory, ChoirSizeCategory, ChoirAgeCategory
+
+
+@pytest.mark.parametrize("choir_size_category", [csz for csz in ChoirSizeCategory])
+def test_choir_size_category_values(choir_size_category: ChoirVoicingCategory) -> None:
+    """Test values of choir size category."""
+    assert isinstance(choir_size_category.value, str)
+    if choir_size_category is ChoirSizeCategory.ALL:
+        assert choir_size_category.value == "variable_size"
+
+
+@pytest.mark.parametrize("choir_age_category", [csz for csz in ChoirAgeCategory])
+def test_choir_age_category_values(choir_age_category: ChoirAgeCategory) -> None:
+    """Test values of choir age category."""
+    assert isinstance(choir_age_category.value, str)
+    if choir_age_category is ChoirAgeCategory.ALL:
+        assert choir_age_category.value == "mixed_age"
 
 
 def test_choir_voicing_self_contains_self_and_all_contains_all_voicings() -> None:
